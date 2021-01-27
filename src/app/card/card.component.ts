@@ -21,6 +21,8 @@ export class CardComponent implements OnInit {
   public onClick():void{
     if( this.data !== null )
       this.select.emit(this.data);
+
+    //[routerLink]="'/shop/' + data.id"
   }
 
   ngOnInit(): void {
