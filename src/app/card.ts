@@ -1,6 +1,6 @@
 export class Card {
     public imgUrl: string = '';
-    public nom: string = '';
+    public name: string = '';
     public description: string = '';
     public type: string = '';
     public crystals: number = 0;
@@ -11,7 +11,7 @@ export class Card {
 export const CATALOG:Card[] = [
     {
         imgUrl: '/assets/jasmine.jpg',
-        nom: 'Jasmine',
+        name: 'Jasmine',
         description: 'C\est la princesse',
         type: 'common',
         crystals: 9,
@@ -20,7 +20,7 @@ export const CATALOG:Card[] = [
     },
     {
         imgUrl: '/assets/aladdin.jpg',
-        nom: 'Aladdin',
+        name: 'Aladdin',
         description: 'Prince ali, ali ababoua',
         type: 'common',
         crystals: 9,
@@ -29,7 +29,7 @@ export const CATALOG:Card[] = [
     }, 
     {
         imgUrl: '/assets/genie.gif',
-        nom: 'Le génie de la lampe',
+        name: 'Le génie',
         description: 'Je suis ton meilleur ami',
         type: 'legendary',
         crystals: 9,

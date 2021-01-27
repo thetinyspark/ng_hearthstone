@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { Card } from '../card';
 
 @Component({
@@ -11,7 +11,16 @@ export class CardComponent implements OnInit {
   @Input()
   public data:Card | null = null;
 
+  @Output()
+  public select:EventEmitter<Card>;
+
   constructor() { 
+    this.select = new EventEmitter<Card>();
+  }
+
+  public onClick():void{
+    if( this.data !== null )
+      this.select.emit(this.data);
   }
 
   ngOnInit(): void {

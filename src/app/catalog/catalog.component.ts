@@ -19,6 +19,10 @@ export class CatalogComponent implements OnInit {
     
   }
 
+  public onCardSelect(card:Card):void{
+    alert(card.name + " wants to be buyed !");
+  }
+
   ngOnInit(): void {
 
   }

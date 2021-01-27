@@ -1,17 +1,21 @@
-<div class="card" *ngIf="data !== null">
-    <div class="inner">
-
-        <p class="crystals">{{data.crystals}}</p>
-        <img src={{data.imgUrl}} alt={{data.nom}} />
-        <p class="name">{{data.nom}}</p>
-        <p class="desc">{{data.description}}</p>
-
-        <div class="bottom">
-            <p class="atk">{{data.atk}}</p>
-            <p class="middle"></p>
-            <p class="def">{{data.def}}</p>
-        </div>
-        
+<div class="container-fluid card" (click)="onClick()" *ngIf="data !== null">
+    <div class="row">
+        <p class="offset-1 col-1 white text-center">{{data.crystals}}</p>
     </div>
+    <div class="row">
+        <img src={{data.imgUrl}} alt={{data.name}} class="offset-3 col-6 thumb" />
+    </div>
+    <div class="row">
+        <p class="col-12 text-center black">{{data.name}}</p>
+    </div>
+    <div class="row h-25">
+        <p class="col-12 text-center black">{{data.description}}</p>
+    </div>
+
+    <div class="row">
+        <p class="offset-2 col-2 white text-left">{{data.atk}}</p>
+        <p class="offset-5 col-2 white text-center">{{data.def}}</p>
+    </div>
+
 </div>
 <p *ngIf="data == null"> Data not available ! </p>

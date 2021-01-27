@@ -5,6 +5,7 @@
 
 <div class="catalog">
     <app-card   *ngFor="let current of cards|type:currentType" 
+                (select)="onCardSelect($event)"
                 [data]="current">
     </app-card>
 </div>
