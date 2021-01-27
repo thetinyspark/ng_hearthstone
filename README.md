@@ -1,11 +1,11 @@
 # TP 
 
-- Créer un tableau de types de cartes. 
-- À partir de ce tableau, générer les balises option du select 
-avec les différentes valeurs possibles. 
+- Créer une nouvelle page appelée "Hauts faits" (AchievementComponent)
+- Relier cette page à l'url "/achievement"
+- Créer la classe Achievement contenant les propriétés suivantes: 
+    - name:string
+    - done:boolean
+    - desc:string
 
-BONUS 
-
-- Définir le tableau en question soit par le biais d'un enum, soit en définissant 
-le tableau depuis card.ts et en l'exportant comme constante. 
+- Créer une dizaine de hauts faits factices et les afficher sur la page "Hauts faits"
 
