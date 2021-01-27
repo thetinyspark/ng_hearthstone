@@ -1,3 +1,10 @@
+
+<select name="" id="" [(ngModel)]="currentType" >
+    <option *ngFor="let current of types" value={{current.value}}>{{current.label}}</option>
+</select>
+
 <div class="catalog">
-    <app-card *ngFor="let current of cards" [data]="current"></app-card>
+    <app-card   *ngFor="let current of cards|type:currentType" 
+                [data]="current">
+    </app-card>
 </div>
