@@ -1,6 +1,5 @@
 .card{
     width: 150px;
-    height: 300px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
@@ -28,8 +27,6 @@
     }
 
     .bottom{
-        margin-top: 2px;
-        margin-bottom: 2px;
         display: flex;
         flex-wrap: wrap;
     }

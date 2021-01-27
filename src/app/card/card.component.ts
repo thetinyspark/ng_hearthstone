@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Card } from '../card';
 
 @Component({
   selector: 'app-card',
@@ -7,14 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  public imgUrl:string          = '/assets/balkany.jpg';
-  public nom:string             = 'Roi des voleurs';
-  public description:string     = 'Balkany oui c\'est bien lui, le roi de levallois';
-  public crystals:number        = 1;
-  public atk:number             = 1;
-  public def:number             = 1;
+  @Input()
+  public data:Card | null = null;
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
