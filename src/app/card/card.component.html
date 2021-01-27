@@ -1,14 +1,17 @@
 <div class="card" *ngIf="data !== null">
-    <p class="crystals">{{data.crystals}}</p>
-    <img src={{data.imgUrl}} alt={{data.nom}} />
-    <p class="name">{{data.nom}}</p>
-    <p class="desc">{{data.description}}</p>
+    <div class="inner">
 
-    <div class="bottom">
-        <p class="atk">{{data.atk}}</p>
-        <p class="middle"></p>
-        <p class="def">{{data.def}}</p>
+        <p class="crystals">{{data.crystals}}</p>
+        <img src={{data.imgUrl}} alt={{data.nom}} />
+        <p class="name">{{data.nom}}</p>
+        <p class="desc">{{data.description}}</p>
+
+        <div class="bottom">
+            <p class="atk">{{data.atk}}</p>
+            <p class="middle"></p>
+            <p class="def">{{data.def}}</p>
+        </div>
+        
     </div>
 </div>
 <p *ngIf="data == null"> Data not available ! </p>
-
