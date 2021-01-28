@@ -33,7 +33,11 @@ export class CatalogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getCardTypes()
+    this.service.getCardTypes().subscribe( 
+      (types:any[]) => {
+        this.types = types;
+      }
+    ); 
   }
 
 }
