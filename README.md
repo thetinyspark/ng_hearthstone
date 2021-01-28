@@ -1,11 +1,6 @@
 # TP 
 
-- Créer une nouvelle page appelée "Hauts faits" (AchievementComponent)
-- Relier cette page à l'url "/achievement"
-- Créer la classe Achievement contenant les propriétés suivantes: 
-    - name:string
-    - done:boolean
-    - desc:string
-
-- Créer une dizaine de hauts faits factices et les afficher sur la page "Hauts faits"
+- Adapter la méthode getCards() du service CardService afin que cette dernière 
+renvoie les données issues du .json "cards.json" et utiliser cette méthode dans le 
+composant catalog.component.ts
 
