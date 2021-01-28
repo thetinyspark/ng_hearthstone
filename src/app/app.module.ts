@@ -5,46 +5,31 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import { CatalogComponent } from './catalog/catalog.component';
-import { TypePipe } from './type.pipe';
-import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
-import { ShopComponent } from './shop/shop.component';
-import { CardService } from './card.service';
-import { CartService } from './cart.service';
+import { CatalogModule } from './catalog.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
-    CatalogComponent,
-    TypePipe,
-    CartComponent,
-    HomeComponent,
-    ShopComponent
+    HomeComponent
   ],
   imports: [
-    HttpClientModule,
-    FormsModule,
     BrowserModule, 
     RouterModule.forRoot(
       [
-        {
-          component: CatalogComponent, 
-          path: "catalog"
-        }, 
         {
           component: HomeComponent, 
           path: "home"
         }, 
         {
-          component: CartComponent, 
-          path: "cart"
-        }, 
-        {
-          component: ShopComponent, 
-          path: "shop/:id"
+          path: "hearthstone", 
+          loadChildren: () => {
+            return import('./catalog.module').then( 
+              (mod) => {
+                return mod.CatalogModule;
+              }
+            )
+          }
         }
       ], 
       {
@@ -52,7 +37,7 @@ import { CartService } from './cart.service';
       }
     )
   ],
-  providers: [CardService, CartService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
