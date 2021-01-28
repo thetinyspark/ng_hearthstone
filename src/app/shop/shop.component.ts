@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Card, CATALOG } from '../card';
 import { CardService } from '../card.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-shop',
@@ -14,8 +15,13 @@ export class ShopComponent implements OnInit {
 
   constructor(
     private currentRoute: ActivatedRoute,
-    private service:CardService
+    private service:CardService, 
+    private cartService:CartService
   ) {
+  }
+
+  public addToCart(card:Card):void{
+    this.cartService.add(card);
   }
 
   ngOnInit(): void {

@@ -1,5 +1,6 @@
 <div *ngIf="data !== null">
-    {{data.name}}
+    <p>{{data.name}}</p>
+    <button (click)="addToCart(data)">Ajouter au panier</button>
 </div>
 <div *ngIf="data === null">
     <img src="https://api.codeline.be/doyen/img/loading.gif" alt="">

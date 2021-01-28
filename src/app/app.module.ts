@@ -12,6 +12,7 @@ import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
 import { CardService } from './card.service';
+import { CartService } from './cart.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { CardService } from './card.service';
       }
     )
   ],
-  providers: [CardService],
+  providers: [CardService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,20 @@
-<p>cart works!</p>
+<table>
+    <tbody>
+        <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr *ngFor="let current of cards">
+            <td>{{current.name}}</td>
+            <td>{{current.price}}</td>
+            <td><button (click)="onDelete(current)">X</button></td>
+        </tr>
+
+        <tr>
+            <td>Total:</td>
+            <td>{{getTotal()}}</td>
+        </tr>
+    </tbody>
+</table>
