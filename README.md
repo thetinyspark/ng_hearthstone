@@ -1,6 +1,14 @@
 # TP 
 
-- Adapter la méthode getCards() du service CardService afin que cette dernière 
-renvoie les données issues du .json "cards.json" et utiliser cette méthode dans le 
-composant catalog.component.ts
+- Ajouter un bouton "Ajouter au panier" sur la page shop. 
+- Créer un service, nommé CartService. 
+- Ajouter une méthode "add" à ce service, et au click sur le bouton, ajoutez la carte en question au panier. 
+- Créer une page /cart permettant de visualiser l'ensemble des cartes ajoutées au panier, leur prix individuel, ainsi que le total. 
+
+
+BONUS: 
+
+Ajouter une fonctionnalité permettant d'enlever des élements du panier. 
+
+
 

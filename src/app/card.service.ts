@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Card, CARD_TYPES, CATALOG } from './card';
 
-import {map} from "rxjs/operators";
-import { Observable } from 'rxjs';
+import {filter, map} from "rxjs/operators";
+import { Observable  } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +25,25 @@ export class CardService {
           return data as any[];
         }
       )
-      
     );
+  }
+
+  public getCards():Observable<Card[]>{
+    return this.httpService.get<Card[]>(environment.cardsUrl);
+  }
+
+  public getCardById( id:number ):Observable<Card|null>{
+    return this.getCards().pipe( 
+      map( 
+        ( cards:Card[] ) => {
+          const filtered:Card|undefined = cards.find( (current:Card) => current.id === id );
+          if( filtered )
+            return filtered;
+          else
+            return null;
+        }
+      )
+    )
   }
 
 }

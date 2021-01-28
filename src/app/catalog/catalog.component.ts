@@ -34,10 +34,12 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getCardTypes().subscribe( 
-      (types:any[]) => {
-        this.types = types;
-      }
+      (types:any[]) => this.types = types
     ); 
+
+    this.service.getCards().subscribe( 
+      (data:Card[]) => this.cards = data
+    );
   }
 
 }

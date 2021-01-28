@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Card, CATALOG } from '../card';
+import { CardService } from '../card.service';
 
 @Component({
   selector: 'app-shop',
@@ -9,28 +10,32 @@ import { Card, CATALOG } from '../card';
 })
 export class ShopComponent implements OnInit {
 
-  private currentRoute:ActivatedRoute;
-  public data:Card | null = null;
+  public data: Card | null = null;
 
-  constructor( param_route:ActivatedRoute ) { 
-    this.currentRoute = param_route;
+  constructor(
+    private currentRoute: ActivatedRoute,
+    private service:CardService
+  ) {
   }
 
   ngOnInit(): void {
-    this.currentRoute.paramMap.subscribe( 
-      (params:ParamMap) => {
+    this.currentRoute.paramMap.subscribe(
+      (params: ParamMap) => {
 
-        const sid:string | null = params.get("id");
-        if( sid === null )
+        const sid: string | null = params.get("id");
+        if (sid === null)
           return;
 
         const id = parseInt(sid);
-        const filtered:Card[] = CATALOG.filter( (card:Card) => card.id === id ); 
-        if( filtered.length > 0 ){
-          this.data = filtered[0];
-        }
+
+        this.service.getCardById(id).subscribe( 
+          (card:Card|null) => {
+              this.data = card;
+          }
+        );
+
       }
-    )
+    );
   }
 
 }

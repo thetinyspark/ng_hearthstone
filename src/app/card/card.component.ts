@@ -17,6 +17,7 @@ export class CardComponent implements OnInit {
 
   constructor() { 
     this.select = new EventEmitter<Card>();
+    console.log("je suis dans le constructeur du composant Card: ", this.data);
   }
 
   public resolveImgUrl( url:string): string{
@@ -31,6 +32,7 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("je suis dans la méthode ngOnInit du composant Card: ", this.data);
   }
 
 }
