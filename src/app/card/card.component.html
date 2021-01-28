@@ -3,7 +3,7 @@
         <p class="offset-1 col-1 white text-center">{{data.crystals}}</p>
     </div>
     <div class="row">
-        <img src={{data.imgUrl}} alt={{data.name}} class="offset-3 col-6 thumb" />
+        <img src={{resolveImgUrl(data.imgUrl)}} alt={{data.name}} class="offset-3 col-6 thumb" />
     </div>
     <div class="row">
         <p class="col-12 text-center black">{{data.name}}</p>

@@ -1,0 +1,18 @@
+[
+    {
+        "value": "all",
+        "label": "Toutes"
+    },
+    {
+        "value": "common",
+        "label": "Communes"
+    },
+    {
+        "value": "legendary",
+        "label": "Légendaires"
+    }, 
+    {
+        "value": "spell",
+        "label": "Sorts"
+    }
+]

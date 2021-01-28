@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false, 
+  cardsUrl:"/assets/data/cards.json", 
+  cardTypesUrl: "/assets/data/card.types.json", 
+  imgBaseUrl: "/assets/img/"
 };
 
 /*

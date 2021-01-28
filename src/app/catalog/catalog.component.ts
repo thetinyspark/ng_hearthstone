@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Card, CARD_TYPES, CATALOG } from '../card';
+import { CardService } from '../card.service';
 
 @Component({
   selector: 'app-catalog',
@@ -14,13 +15,13 @@ export class CatalogComponent implements OnInit {
   public currentType: string = 'all';
 
   private router:Router;
+  private service:CardService;
 
-  constructor( param_router:Router) {
-
+  constructor( param_router:Router, param_service:CardService ) {
     this.router = param_router;
-    this.types = CARD_TYPES;
-    this.cards = CATALOG;
-    
+    this.service = param_service;
+    this.types = [];
+    this.cards = [];
   }
 
   public onCardSelect(card:Card):void{
@@ -32,7 +33,7 @@ export class CatalogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.service.getCardTypes()
   }
 
 }

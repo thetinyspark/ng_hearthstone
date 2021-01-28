@@ -1,4 +1,5 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Card } from '../card';
 
 @Component({
@@ -16,6 +17,10 @@ export class CardComponent implements OnInit {
 
   constructor() { 
     this.select = new EventEmitter<Card>();
+  }
+
+  public resolveImgUrl( url:string): string{
+    return environment.imgBaseUrl + url;
   }
 
   public onClick():void{

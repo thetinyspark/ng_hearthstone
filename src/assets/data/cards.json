@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "imgUrl": "jasmine.jpg",
+        "name": "Jasmine",
+        "description": "C'est la princesse",
+        "type": "common",
+        "crystals": 9,
+        "atk": 9,
+        "def": 9,
+        "price": 1000
+    },
+    {
+        "id": 2,
+        "imgUrl": "aladdin.jpg",
+        "name": "Aladdin",
+        "description": "Prince ali, ali ababoua",
+        "type": "common",
+        "crystals": 9,
+        "atk": 9,
+        "def": 9,
+        "price": 800
+    },
+    {
+        "id": 3,
+        "imgUrl": "genie.gif",
+        "name": "Le génie",
+        "description": "Je suis ton meilleur ami",
+        "type": "legendary",
+        "crystals": 9,
+        "atk": 9,
+        "def": 9,
+        "price": 5000000
+    }
+]

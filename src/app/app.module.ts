@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
@@ -10,6 +11,7 @@ import { TypePipe } from './type.pipe';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
+import { CardService } from './card.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { ShopComponent } from './shop/shop.component';
     ShopComponent
   ],
   imports: [
+    HttpClientModule,
     FormsModule,
     BrowserModule, 
     RouterModule.forRoot(
@@ -48,7 +51,7 @@ import { ShopComponent } from './shop/shop.component';
       }
     )
   ],
-  providers: [],
+  providers: [CardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
