@@ -11,11 +11,11 @@ import { Card } from '../card';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  private sub:Subscription|null;
-  public items:Card[];
-  constructor(private firestore:AngularFirestore) { 
-    this.items = [];
-    this.sub = null;
+  // private sub:Subscription|null;
+  // public items:Card[];
+  constructor(/*private firestore:AngularFirestore*/) { 
+    // this.items = [];
+    // this.sub = null;
   }
 
   ngOnInit(): void {
@@ -31,9 +31,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy():void{
-    alert("destroy");
-    if( this.sub !== null )
-      this.sub.unsubscribe();
+    // alert("destroy");
+    // if( this.sub !== null )
+    //   this.sub.unsubscribe();
   }
 
 }

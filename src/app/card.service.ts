@@ -5,14 +5,17 @@ import { Card, CARD_TYPES, CATALOG } from './card';
 
 import {filter, map} from "rxjs/operators";
 import { Observable  } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore';
+// import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
 
-  constructor( private httpService:HttpClient, private firestore:AngularFirestore ) { }
+  constructor( 
+    private httpService:HttpClient/*, 
+    private firestore:AngularFirestore */
+  ) { }
 
   public getCatalog():Card[]{
     return CATALOG;
