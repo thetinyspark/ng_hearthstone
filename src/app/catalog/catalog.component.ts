@@ -27,7 +27,7 @@ export class CatalogComponent implements OnInit {
   public onCardSelect(card:Card):void{
     const ok = confirm("Voulez-vous acheter " + card.name + " ?" );
     if( ok ){
-      const url:string = "/shop/" + card.id;
+      const url:string = "/hearthstone/shop/" + card.id;
       this.router.navigate([url]);
     }
   }

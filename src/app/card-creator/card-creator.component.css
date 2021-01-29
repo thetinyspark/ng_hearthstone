@@ -1,0 +1,18 @@
+label, input{
+    width: 200px;
+    margin-left: 15px;
+}
+
+.icon{
+    margin-left: 15px;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+input.ng-dirty.ng-valid{
+    background-color: rgba(1, 65, 17, 0.733);
+}
+
+input.ng-dirty.ng-invalid{
+    background-color: rgba(148, 5, 5, 0.5);
+}

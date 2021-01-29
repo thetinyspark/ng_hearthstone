@@ -1,0 +1,57 @@
+<form [formGroup]="cardCreatorForm" 
+            (ngSubmit)="onSubmit()">
+
+    <label>Nom carte</label>
+    <input type="text" formControlName="name" />
+    <img src="/assets/icon/valid.png"  class="icon" [hidden]="!cardCreatorForm.controls.name.valid" alt="" />
+    <img src="/assets/icon/invalid.png" class="icon" [hidden]="cardCreatorForm.controls.name.valid" alt="" />
+    <br />
+
+    <label>Url image</label>
+    <input type="text" formControlName="imgUrl" />
+    <img src="/assets/icon/valid.png"  class="icon" [hidden]="!cardCreatorForm.controls.imgUrl.valid" alt="" />
+    <img src="/assets/icon/invalid.png" class="icon" [hidden]="cardCreatorForm.controls.imgUrl.valid" alt="" />
+    <br />
+
+    <label>Description</label>
+    <input type="text" formControlName="description" />
+    <img src="/assets/icon/valid.png"  class="icon" [hidden]="!cardCreatorForm.controls.description.valid" alt="" />
+    <img src="/assets/icon/invalid.png" class="icon" [hidden]="cardCreatorForm.controls.description.valid" alt="" />
+    <br />
+
+    <label>Type de carte</label>
+    <input type="text" formControlName="type" />
+    <img src="/assets/icon/valid.png"  class="icon" [hidden]="!cardCreatorForm.controls.type.valid" alt="" />
+    <img src="/assets/icon/invalid.png" class="icon" [hidden]="cardCreatorForm.controls.type.valid" alt="" />
+    <br />
+
+    <label>Coût en cristaux</label>
+    <input type="number" formControlName="crystals" />
+    <img src="/assets/icon/valid.png"  class="icon" [hidden]="!cardCreatorForm.controls.crystals.valid" alt="" />
+    <img src="/assets/icon/invalid.png" class="icon" [hidden]="cardCreatorForm.controls.crystals.valid" alt="" />
+    <br />
+
+    
+    <label>Atk</label>
+    <input type="number" formControlName="atk" />
+    <img src="/assets/icon/valid.png"  class="icon" [hidden]="!cardCreatorForm.controls.atk.valid" alt="" />
+    <img src="/assets/icon/invalid.png" class="icon" [hidden]="cardCreatorForm.controls.atk.valid" alt="" />
+    <br />
+
+    
+    <label>Def</label>
+    <input type="number" formControlName="def" />
+    <img src="/assets/icon/valid.png"  class="icon" [hidden]="!cardCreatorForm.controls.def.valid" alt="" />
+    <img src="/assets/icon/invalid.png" class="icon" [hidden]="cardCreatorForm.controls.def.valid" alt="" />
+    <br />
+
+    
+    <label>Prix</label>
+    <input type="number" formControlName="price"/>
+    <img src="/assets/icon/valid.png"  class="icon" [hidden]="!cardCreatorForm.controls.price.valid" alt="" />
+    <img src="/assets/icon/invalid.png" class="icon" [hidden]="cardCreatorForm.controls.price.valid" alt="" />
+    <br />
+
+    <input type="submit" value="OK" />
+
+</form>

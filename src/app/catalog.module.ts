@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CardComponent } from './card/card.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardService } from './card.service';
 import { CartComponent } from './cart/cart.component';
 import { ShopComponent } from './shop/shop.component';
@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { CartService } from './cart.service';
 import { TypePipe } from './type.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { CardCreatorComponent } from './card-creator/card-creator.component';
 
 
 
@@ -19,9 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent, 
     ShopComponent,
     CardComponent, 
-    TypePipe
+    TypePipe, 
+    CardCreatorComponent
   ],
   imports: [
+    ReactiveFormsModule,
     HttpClientModule,
     CommonModule, 
     FormsModule, 
@@ -30,6 +33,10 @@ import { HttpClientModule } from '@angular/common/http';
         {
           component: CatalogComponent, 
           path: "catalog"
+        }, 
+        {
+          component: CardCreatorComponent, 
+          path: "create"
         }, 
         {
           component: CartComponent, 
