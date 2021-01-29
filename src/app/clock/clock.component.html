@@ -1,1 +1,23 @@
-<p>{{date.getHours()}} : {{date.getMinutes()}} : {{date.getSeconds()}}</p>
+<p> 
+    
+    <span i18n>
+        {
+            date.getHours(), plural, 
+            =0 {heure} 
+            other { {{date.getHours()}} heures } 
+        }
+    </span>
+
+    <span i18n>
+        {
+            date.getMinutes(), plural, 
+            =0 {minute} 
+            other { {{date.getMinutes()}} minutes } 
+        }
+    </span>
+
+</p>
+
+
+    
+    
