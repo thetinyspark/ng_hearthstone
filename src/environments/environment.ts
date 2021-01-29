@@ -6,7 +6,10 @@ export const environment = {
   production: false, 
   cardsUrl:"/assets/data/cards.json", 
   cardTypesUrl: "/assets/data/card.types.json", 
-  imgBaseUrl: "/assets/img/"
+  imgBaseUrl: "/assets/img/", 
+  firebaseConfig: {
+    // put your firebase config here
+  }
 };
 
 /*

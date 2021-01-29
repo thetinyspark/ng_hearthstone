@@ -4,14 +4,6 @@
   "newProjectRoot": "projects",
   "projects": {
     "hearthstone": {
-      "i18n": {
-        "sourceLocale": "en-US", 
-        "locales": {
-          "fr": "src/locales/messages.fr.xlf", 
-          "en": "src/locales/messages.en.xlf",
-          "es": "src/locales/messages.es.xlf"
-        }
-      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -30,7 +22,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "localize":true,
+            "localize": true,
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -49,7 +41,6 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "localize": ["fr"],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -130,6 +121,10 @@
               "devServerTarget": "hearthstone:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

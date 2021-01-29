@@ -5,13 +5,14 @@ import { Card, CARD_TYPES, CATALOG } from './card';
 
 import {filter, map} from "rxjs/operators";
 import { Observable  } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
 
-  constructor( private httpService:HttpClient ) { }
+  constructor( private httpService:HttpClient, private firestore:AngularFirestore ) { }
 
   public getCatalog():Card[]{
     return CATALOG;
@@ -46,6 +47,11 @@ export class CardService {
 
   public getCards():Observable<Card[]>{
     return this.httpService.get<Card[]>(environment.cardsUrl);
+    // return this.firestore.collection('cards').valueChanges().pipe( 
+    //   map( 
+    //     (data:any[]) => data as Card[]
+    //   )
+    // );
   }
 
   public getCardById( id:number ):Observable<Card|null>{

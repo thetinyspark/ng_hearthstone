@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hearthstone-dd287": {
+      "hosting": {
+        "hearthstone": [
+          "hearthstone-dd287"
+        ]
+      }
+    }
+  }
+}
