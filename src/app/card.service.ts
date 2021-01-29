@@ -28,6 +28,22 @@ export class CardService {
     );
   }
 
+  public isCardTypeValid(value:string):Observable<boolean>{
+    return this.getCardTypes().pipe( 
+      map( 
+        (types:any[]):boolean => {
+          
+          for( let i:number = 0; i < types.length; i++ ){
+            if( types[i].value === value )
+              return true;
+          }
+
+          return false;
+        }
+      )
+    )
+  }
+
   public getCards():Observable<Card[]>{
     return this.httpService.get<Card[]>(environment.cardsUrl);
   }
