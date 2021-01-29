@@ -1,9 +1,12 @@
-<h1 i18n="Welcoming message|The home welcoming message">Hello!</h1>
-<p i18n>
-    To be or not to be that's the question.
-</p>
+<p>{{count | async}}</p>
 <ul>
-    <li class="text" *ngFor="let item of items">
-        {{item.name}}
+    <li *ngFor="let current of movies | async ">
+        {{current}}
     </li>
 </ul>
+<button (click)="onIncrement()">+</button>
+<button (click)="onDecrement()">-</button>
+<button (click)="onReset()">Reset</button>
+<button (click)="onMovie()">Add Movie</button>
+
+<mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>

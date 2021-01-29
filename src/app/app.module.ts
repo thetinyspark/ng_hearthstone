@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CatalogModule } from './catalog.module';
 import { ClockComponent } from './clock/clock.component';
+import {MatSliderModule} from '@angular/material/slider';
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './ngrx/reducers/counter.reducer';
+import { movieReducer } from './ngrx/reducers/movie.reducer';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -18,6 +24,7 @@ import { environment } from 'src/environments/environment';
     ClockComponent
   ],
   imports: [
+    MatSliderModule,
     BrowserModule, 
     // AngularFireModule.initializeApp(environment.firebaseConfig),
     // AngularFireAnalyticsModule, 
@@ -42,7 +49,13 @@ import { environment } from 'src/environments/environment';
       {
         useHash: true
       }
-    )
+    ), 
+    StoreModule.forRoot(
+      {
+        count: counterReducer, 
+        movies: movieReducer
+      }
+    ), BrowserAnimationsModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
